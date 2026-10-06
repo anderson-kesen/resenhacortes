@@ -1,0 +1,12 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Autorização – Resenha Cortes</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Autorização concluída</h1>
+<p id="msg">Lendo a resposta da plataforma…</p>
+<pre id="code" style="white-space:pre-wrap;word-break:break-all;background:#f4f4f4;padding:12px;border-radius:6px"></pre>
+<p>Copie o código acima e cole no script do servidor. Ele expira em poucos minutos e só funciona uma vez. Esta página não envia nada para lugar nenhum.</p>
+<script>
+const p=new URLSearchParams(location.search);
+const c=p.get('code'),e=p.get('error');
+document.getElementById('msg').textContent=c?'Código de autorização:':(e?('Erro: '+e+' – '+(p.get('error_description')||'')):'Nenhum código na URL.');
+if(c)document.getElementById('code').textContent=c;
+</script>
+<footer><a href="index.html">Resenha Cortes</a></footer></body></html>
